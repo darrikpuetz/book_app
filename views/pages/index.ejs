@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book Collection</title>
+</head>
+
+<body>
+    <main>
+        <h1>Search by Title and Author</h1>
+        <form action="/search" method="post">
+            <input type="text" name="search" placeholder="Enter Title or Author" required>
+            <fieldset>
+                <label for="Title">
+          <h2>Title</h2>
+          <input type="radio" name="search" value="title" required>
+        </label>
+            </fieldset>
+            <fieldset>
+                <label for="Author">
+            <h2>Author</h2>
+            <input type="radio" name="search" value="author" required>
+          </label>
+            </fieldset>
+            <button type="submit">Search the Google Books API</button>
+        </form>
+    </main>
+</body>
+
+</html>
