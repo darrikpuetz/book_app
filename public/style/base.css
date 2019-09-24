@@ -1,3 +1,4 @@
 body {
-    background-image: url(/public/style/img/cheese.png);
+    background-image: url("/public/style/img/cheese.png");
+    color: ivory;
 }

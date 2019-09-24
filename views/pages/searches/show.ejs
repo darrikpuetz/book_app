@@ -10,18 +10,18 @@
 </head>
 
 <body>
-    <%= searchResults.forEach(item => { %>
-        <img src="<%= item.image %>" />
-        <p>
+    <% searchResults.forEach(item => { %>
+        <li>
             <%= item.title %>
-        </p>
-        <p>
+        </li>
+        <li>
             <%= item.author %>
-        </p>
-        <p>
+        </li>
+        <li>
             <%= item.description %>
-        </p>
+        </li>
         <% }) %>
+
 </body>
 
 </html>
