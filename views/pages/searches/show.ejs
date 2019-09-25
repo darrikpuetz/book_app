@@ -11,12 +11,14 @@
 
 <body>
     <% searchResults.forEach(item => { %>
-        <img src= <%= item.image %> alt="">
+
+        <img src="<%= item.image %>" alt="">
+
         <li>
             <%= item.title %>
         </li>
         <li>
-            <%= item.author %>
+            <%= item.author[0] %>
         </li>
         <li>
             <%= item.description %>
@@ -25,4 +27,4 @@
 
 </body>
 
-</html>
+</html>s
