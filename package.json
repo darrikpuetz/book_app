@@ -1,14 +1,15 @@
 {
   "name": "book_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Author**: Chris \"Chedda\" Ceder & Darrik Puetz\r **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)",
   "main": "server.js",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "pg": "^7.12.1"
+    "pg": "^7.12.1",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -19,7 +20,7 @@
     "type": "git",
     "url": "git+https://github.com/darrikpuetz/book_app.git"
   },
-  "author": "",
+  "author": "Chedda Chris and Darrik",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/darrikpuetz/book_app/issues"
