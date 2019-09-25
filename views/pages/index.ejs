@@ -2,32 +2,22 @@
 <html lang="en">
 
 <head>
-    <title>Book Collection</title>
-    <link rel="stylesheet" href="/public/style/reset.css" />
-    <link rel="stylesheet" href="/public/style/base.css" />
-    <link rel="stylesheet" href="/public/style/layout.css" />
-    <link rel="stylesheet" href="/public/style/modules.css" />
+    <%- include('../layout/head') %>
 </head>
 
 <body>
+    <header>
+    </header>
     <main>
-        <h1>Search by Title and Author</h1>
-        <form action="/searches" method="post">
-            <input type="text" name="search" placeholder="Enter Title or Author" required>
-            <fieldset>
-                <label for="Title">
-          <h2>Title</h2>
-          <input type="radio" name="search" value="title" required>
-        </label>
-            </fieldset>
-            <fieldset>
-                <label for="Author">
-            <h2>Author</h2>
-            <input type="radio" name="search" value="author" required>
-          </label>
-            </fieldset>
-            <button type="submit">Search the Google Books API</button>
-        </form>
+        <h4>Saved Books</h4>
+        <p>
+            <%= books.length %> books in the Collection</p>
+        <% books.forEach(book => { %>
+            <div class="books" data-book-id=" <%= book.id %> ">
+                <%- include('../pages/books/detail', {book: book}); %>
+                    <p class="details"><a href="..pages/books/<%= book.id %>">View Details</a></p>
+            </div>
+            <% }) %>
     </main>
 </body>
 
