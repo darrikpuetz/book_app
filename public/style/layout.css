@@ -1,0 +1,11 @@
+body {
+    background-image: url("/public/style/img/cheese.png");
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 480px) {
+    body {
+        background-image: url("/public/style/img/cheese.png");
+    }
+}

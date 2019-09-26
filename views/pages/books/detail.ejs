@@ -1,22 +1,48 @@
-<div class="book-container detail-view">
-    <img src="<%= book.image_url %>">
-    <h3>
-        <%= book.title %>
-            <% if (book.subtitle) { %>:
-                <%= book.subtitle %>
-                    <% } %>
-    </h3>
-    <div>
-        <%= book.author %>
-    </div>
-    <p class="desc">
-        <%= book.description %>
-    </p>
-    <p class="isbn">
-        <%= book.isbn %>
-            <% if ( book.bookshelf) { %>
-                &mdash; Bookshelf:
-                <%= book.bookshelf %>
-                    <% } %>
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../layout/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include('../../layout/header') %>
+    </header>
+    <main>
+        <div class="book-container detail-view">
+            <img src="<%= book.image_url %>">
+            <h3>
+                <%= book.title %>
+                    <% if (book.subtitle) { %>
+                        <%= book.subtitle %>
+                            <% } %>
+            </h3>
+            <div>
+                <%= book.author %>
+            </div>
+            <p class="desc">
+                <%= book.description %>
+            </p>
+            <p class="isbn">
+                <%= book.isbn %>
+                    <% if ( book.bookshelf) { %>
+                        &mdash; Bookshelf:
+                        <%= book.bookshelf %>
+                            <% } %>
+            </p>
+            <form action="<%= `/books/${book.id}` %>" method="POST">
+                <input type="hidden" name="_method" value="put">
+                <span>Update bookshelf</span> <input class="input" type="text" name="bookshelf" value="<%= book.bookshelf %>" required/>
+                <button class="button_link" type="submit">Update Bookshelf</button>
+            </form>
+
+            <form class="unlist" action="/books/<%= book.id %>" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <button class="button_link">Remove "<%= book.title %>" From My Collection</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

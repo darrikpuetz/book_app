@@ -1,4 +1,58 @@
-body {
-    background-image: url("/public/style/img/cheese.png");
-    color: ivory;
+main {
+    background: rgb(182, 123, 14);
+    margin: auto;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 3em;
+}
+
+h2 {
+    color: black;
+    font-size: 3em;
+}
+
+p {
+    text-align: justify;
+    font-size: 1em;
+}
+
+li {
+    display: inline-block;
+}
+
+.navigation {
+    /* background-color: darkgreen; */
+    color: white;
+    width: 100%;
+    height: 5em;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 480px) {
+    main {
+        width: 70%;
+        margin: auto;
+        text-align: center;
+    }
+    header {
+        width: 70%;
+        margin: auto;
+    }
+    .app_name {
+        text-align: left;
+    }
+    .navigation {
+        margin: auto;
+        box-sizing: border-box;
+    }
+    p {
+        text-align: justify;
+        font-size: 1em;
+    }
 }

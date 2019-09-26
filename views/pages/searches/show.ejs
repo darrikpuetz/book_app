@@ -2,30 +2,50 @@
 <html lang="en">
 
 <head>
-    <%- incude('../layout/head') %>
+    <%- include('../../layout/head') %>
 </head>
 
 <body>
     <header>
-
+        <%- include('../../layout/header') %>
     </header>
     <main>
-        <div>
-            <% searchResults.forEach(item => { %>
-                <img src="<%= item.image %>" alt="">
-                <ul>
-                    <li>
-                        <%= item.title %>
-                    </li>
-                    <li>
-                        <%= item.author[0] %>
-                    </li>
-                    <li>
-                        <%= item.description %>
-                    </li>
+        <section>
+            <div>
+                <% searchResults.forEach(item => { %>
+                    <img src="<%= item.image %>" alt="">
+                    <ul>
+                        <li>
+                            <%= item.title %>
+                        </li>
+                        <li>
+                            <%= item.author %>
+                        </li>
+                        <li>
+                            <%= item.description %>
+                        </li>
+                    </ul>
+                    <form action="/books" method="post">
+                        <input type="hidden" name="_method" value="create">
+                        <input type="hidden" name="isbn" value="<%= item.isbn %>">
+                        <input type="hidden" name="image_url" value="<%= item.image %>">
+                        <input type="hidden" name="title" value="<%= item.title %>">
+                        <input type="hidden" name="author" value="<%= item.author %>">
+                        <input type="hidden" name="description" value="<%= item.description %>">
+                        <span>Add bookshelf</span> <input class="input" type="text" name="bookshelf" value="<%= item.bookshelf %>" required/>
+                        <button class="button_link">Add "<%= item.title %>" To My Collection</button>
+                    </form>
                     <% }) %>
-                </ul>
-        </div>
+            </div>
+        </section>
+
+        <section>
+            <h2></h2>
+            <form>
+
+            </form>
+
+        </section>
 
 
     </main>
