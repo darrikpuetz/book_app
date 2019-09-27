@@ -1,48 +1,65 @@
 body {
     background-image: url("/public/style/img/cheese.png");
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
 }
 
-body, header, main, div {
-  margin: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  width: 100%;
-  text-align: center;
+li {
+    text-align: center;
+    margin: 5px;
 }
 
-main > section > div {
-  width: 80%;
-  margin-top: 50px;
-  background-color: #999999;
+a {
+    float: left;
+    width: 150px;
+    padding: .75rem 0;
+    margin: 5px;
+    text-decoration: none;
+    color: ivory;
+    background: black;
+    border: 0.2em solid darkgreen;
+    border-radius: 10px;
+    text-align: center;
 }
 
-main > section > div > img {
-  width: 60%;
-  margin: auto;
-  margin-top: 40px; 
+a:hover {
+    margin-left: .5%;
 }
 
-main > section > div > h2 {
-  margin-top: 20px;
-  font-size: 20px;
-  color: white;
+span {
+    margin: 5px;
 }
 
-main > section > div > h3 {
-  margin-top: 10px; 
+form {
+    margin: 5px;
+    padding: 10px;
 }
 
-main > section > div > a {
-  width: 60%;
-  height: 60px;
-  line-height: 60px;
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
+img {
+    margin: 10px;
 }
+
+.button_link {
+    position: relative;
+    background: black;
+    color: ivory;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.2em solid darkgreen;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+
 @media only screen and (min-width: 480px) {
     body {
         background-image: url("/public/style/img/cheese.png");
+    }
+    li {
+        text-align: center;
+        margin: 5px;
     }
 }

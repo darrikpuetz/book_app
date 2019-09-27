@@ -32,7 +32,7 @@ app.get('/', grabFromBookshelf);
 app.post('/searches', searchMaker);
 app.get('/search', newSearch);
 app.post('/books', bookMaker);
-app.get('/pages/books/:book_id', getBookFromTable);
+app.get('/pages/books/:book_id', getBookDetails);
 app.put('/books/:book_id', updateBook);
 app.delete('/books/:id', deleteBook);
 
@@ -62,6 +62,7 @@ function updateBooks(request, response) {
   client.query(sql, values)
     .then(() => response.redirect('/'))
     .catch(error => response.send(error));
+
 }
 
 function newSearch(request, response) {
@@ -117,14 +118,13 @@ function bookMaker(request, response) {
     .catch(error => response.status(500).render('pages/error'), { err: 'yea yea yea, it sucks, we know' });
 }
 
-function getBookFromTable(request, response) {
+function getBookDetails(request, response) {
   let SQL = `SELECT * from books WHERE id=${request.params.book_id};`;
   let value = [request.params.book_id];
 
   return client.query(SQL, value)
-    .then(info => {
-      response.render('pages/books/show', { book: info.rows[0] })
-    })
+    .then(info => response.render('/pages/books/:book_id', { book: info.rows[0] }))
+    .then(response.redirect('/pages/books/:book_id'))
     .catch(error => response.status(500).render('pages/error'), { error: 'yea yea yea, it sucks, we know' });
 }
 

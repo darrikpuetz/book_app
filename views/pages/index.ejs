@@ -13,14 +13,14 @@
         <h2>Saved Books</h2>
         <p>
             <%= books.length %> books in the Collection</p>
+        </br>
         <% books.forEach(book => { %>
             <div class="books" data-book-id="<%= book.id %>">
                 <%- include('./books/detail', {book: book}) %>
-                    <p class="details"><a href="/books/detail.ejs <%= book.id %>">View Details</a></p>
+                    <p class="details"><a href="/pages/books/<%= book.id %>">View Details</a></p>
             </div>
             <% }) %>
     </main>
 </body>
 
 </html>
-
