@@ -1,9 +1,46 @@
 body {
     background-image: url("/public/style/img/cheese.png");
-    display: flex;
-    flex-direction: column;
 }
 
+body, header, main, div {
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+main > section > div {
+  width: 80%;
+  margin-top: 50px;
+  background-color: #999999;
+}
+
+main > section > div > img {
+  width: 60%;
+  margin: auto;
+  margin-top: 40px; 
+}
+
+main > section > div > h2 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+main > section > div > h3 {
+  margin-top: 10px; 
+}
+
+main > section > div > a {
+  width: 60%;
+  height: 60px;
+  line-height: 60px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 @media only screen and (min-width: 480px) {
     body {
         background-image: url("/public/style/img/cheese.png");
