@@ -111,6 +111,7 @@ function bookMaker(request, response) {
       values = [request.body.isbn];
       return client.query(SQL, values)
         .then(result => response.redirect(`/books/${result.rows[0].id}`))
+        .then(response.redirect('/'))
         .catch(error => response.status(500).render('pages/error'), { err: 'yea yea yea, it sucks, we know ' });
     })
     .catch(error => response.status(500).render('pages/error'), { err: 'yea yea yea, it sucks, we know' });
