@@ -34,7 +34,7 @@ app.get('/search', newSearch);
 app.post('/books', bookMaker);
 app.get('/pages/books/:book_id', getBookDetails);
 app.put('/books/:book_id', updateBook);
-app.delete('/books/:id', deleteBook);
+app.delete('/books/:book_id', deleteBook);
 
 
 // From client
@@ -111,7 +111,7 @@ function bookMaker(request, response) {
       SQL = 'SELECT * FROM books WHERE isbn=$1;';
       values = [request.body.isbn];
       return client.query(SQL, values)
-        .then(result => response.redirect(`/books/${result.rows[0].id}`))
+      // .then(result => response.redirect(`/books/${result.rows[0].id}`))
         .then(response.redirect('/'))
         .catch(error => response.status(500).render('pages/error'), { err: 'yea yea yea, it sucks, we know ' });
     })
@@ -119,21 +119,19 @@ function bookMaker(request, response) {
 }
 
 function getBookDetails(request, response) {
-  let SQL = `SELECT * from books WHERE id=${request.params.book_id};`;
+  let SQL = `SELECT * from books WHERE id=$1;`;
   let value = [request.params.book_id];
 
   return client.query(SQL, value)
-    .then(info => response.render('/pages/books/:book_id', { book: info.rows[0] }))
-    .then(response.redirect('/pages/books/:book_id'))
+    .then(info => response.render('pages/books/detail', { book: info.rows[0] }))
     .catch(error => response.status(500).render('pages/error'), { error: 'yea yea yea, it sucks, we know' });
 }
 
 function deleteBook(req, res) {
   let SQL = 'DELETE FROM books WHERE id=$1;';
-  let values = [req.params.id];
-
+  let values = [req.params.book_id];
   return client.query(SQL, values)
-    .then(res.redirect('/'))
+    .then(() => res.redirect('/'))
     .catch(() => res.status(500).render('pages/error'), { err: 'Yikes' });
 }
 

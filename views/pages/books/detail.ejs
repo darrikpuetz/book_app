@@ -39,10 +39,10 @@
                 <button class="button_link" type="submit">Update Bookshelf</button>
             </form>
 
-            <form class="unlist" action="pages/books/<%= book.id %>" method="post">
+            <form class="unlist" action="/books/<%= book.id %>" method="post">
                 <input type="hidden" name="_method" value="delete">
                 </br>
-                <button class="button_link">Remove "<%= book.title %>" From My Collection</button>
+                <button class="button_link" type="submit">Remove "<%= book.title %>" From My Collection</button>
             </form>
         </div>
     </main>

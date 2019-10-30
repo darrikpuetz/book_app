@@ -1,31 +1,30 @@
 {
-    "name": "book_app",
-    "version": "1.0.0",
-    "description": "**Author**: Chris \"Chedda\" Ceder & Darrik Puetz\r **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)",
-    "main": "server.js",
-    "dependencies": {
-        "cors": "^2.8.5",
-        "dotenv": "^8.1.0",
-        "ejs": "^2.7.1",
-        "express": "^4.17.1",
-        "method-override": "^3.0.0",
-        "pg": "^7.12.1",
-        "superagent": "^5.1.0"
-
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/darrikpuetz/book_app.git"
-    },
-    "author": "Chedda Chris and Darrik",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/darrikpuetz/book_app/issues"
-    },
-    "homepage": "https://github.com/darrikpuetz/book_app#readme"
+  "name": "book_app",
+  "version": "1.0.0",
+  "description": "**Author**: Chris \"Chedda\" Ceder & Darrik Puetz\r **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "pg": "^7.12.1",
+    "superagent": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darrikpuetz/book_app.git"
+  },
+  "author": "Chedda Chris and Darrik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darrikpuetz/book_app/issues"
+  },
+  "homepage": "https://github.com/darrikpuetz/book_app#readme"
 }
